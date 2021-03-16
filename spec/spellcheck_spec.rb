@@ -28,7 +28,7 @@ describe Spellcheck do
       expect(subject.check("Hllo", [])).to eq "~Hllo~"
     end
 
-    it 'shaves trailing whitespace' do
+    it 'replicates two spaces' do
       expect(subject.check("Hello  friend", ["hello", "friend"])).to eq "Hello  friend"
     end
   end

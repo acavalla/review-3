@@ -1,21 +1,21 @@
 class Spellcheck
-  attr_reader :new_string
   def check(string, array)
+    dictionary_verify(string, array)
     if string.split("")[string.split(" ")[0].length+1] == " "
-      dictionary_verify(string, array).join("  ")
+      new_string.join("  ")
     else
-      dictionary_verify(string, array).join(" ")
+      new_string.join(" ")
     end
   end
 
   private
+  attr_reader :new_string
 
   def dictionary_verify(string, array)
     @new_string = []
     string.split(" ").each do |substring|
       word_verify(substring, array)
     end
-    new_string
   end
 
   def word_verify(substring, array)
