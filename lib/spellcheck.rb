@@ -1,11 +1,7 @@
 class Spellcheck
   def check(string, array)
     dictionary_verify(string, array)
-    if string.split("")[string.split(" ")[0].length+1] == " "
-      new_string.join("  ")
-    else
-      new_string.join(" ")
-    end
+    join_new_string(string, new_string)
   end
 
   private
@@ -23,6 +19,14 @@ class Spellcheck
       new_string << substring
     else
       new_string << "~" + substring + "~"
+    end
+  end
+
+  def join_new_string(string, new_string)
+    if string.split("")[string.split(" ")[0].length+1] == " "
+      new_string.join("  ")
+    else
+      new_string.join(" ")
     end
   end
 end
