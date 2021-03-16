@@ -1,5 +1,5 @@
 class Spellcheck
-  attr_reader :new_string 
+  attr_reader :new_string
   def check(string, array)
     dictionary_verify(string, array).join(" ")
   end
@@ -15,10 +15,6 @@ class Spellcheck
   end
 
   def word_verify(substring, array)
-    if array.include?(substring)
-      new_string << substring
-    else
-      new_string << "~" + substring + "~"
-    end
+    array.include?(substring) ? new_string << substring : new_string << "~" + substring + "~"
   end
 end
