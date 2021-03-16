@@ -11,3 +11,5 @@ British english
 
 Custom dictionary: provided
 Do not need to handle punctuation or proper nouns
+
+Varying number of spaces in input

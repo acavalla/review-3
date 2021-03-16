@@ -1,7 +1,11 @@
 class Spellcheck
   attr_reader :new_string
   def check(string, array)
-    dictionary_verify(string, array).join(" ")
+    if string.split("")[string.split(" ")[0].length+1] == " "
+      dictionary_verify(string, array).join("  ")
+    else
+      dictionary_verify(string, array).join(" ")
+    end
   end
 
   private
