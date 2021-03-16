@@ -15,6 +15,10 @@ class Spellcheck
   end
 
   def word_verify(substring, array)
-    array.include?(substring) ? new_string << substring : new_string << "~" + substring + "~"
+    if array.include?(substring.downcase)
+      new_string << substring
+    else
+      new_string << "~" + substring + "~"
+    end
   end
 end

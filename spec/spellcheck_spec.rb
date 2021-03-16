@@ -22,6 +22,12 @@ describe Spellcheck do
     it 'can handle two words, one is spelled corrently' do
       expect(subject.check("hello frind", ["hello", "friend"])).to eq "hello ~frind~"
     end
+
+    it 'preserves capitalization' do
+      expect(subject.check("Hello", ["hello"])).to eq "Hello"
+      expect(subject.check("Hllo", [])).to eq "~Hllo~"
+    end
+
   end
 
 end
