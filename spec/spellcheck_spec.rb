@@ -18,6 +18,10 @@ describe Spellcheck do
     it 'can handle two correctly spelled words' do
       expect(subject.check("hello friend", ["hello", "friend"])).to eq "hello friend"
     end
+
+    it 'can handle two words, one is spelled corrently' do
+      expect(subject.check("hello frind", ["hello", "friend"])).to eq "hello ~frind~"
+    end
   end
 
 end
